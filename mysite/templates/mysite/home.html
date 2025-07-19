@@ -1,0 +1,373 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="\static\css\home.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .menu h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            line-height: 25px;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fade-in effect */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease-in-out;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #ff7842;
+}
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            width: 100%;
+        }
+
+        footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        footer .footer-logo {
+            flex: 1;
+            text-align: left;
+        }
+
+        footer .footer-links {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        footer .footer-links a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        footer .footer-links a:hover {
+            color: #ff5722;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">FLAVOR FUSION</div>
+        <ul>
+            <li>
+                <a href="{% url 'home' %}"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a>
+            </li>
+            <li>
+                <a href="login.html"><i class="fas fa-user" style="margin-right: 5px;"></i> Login</a>
+            </li>
+            <li>
+                <a href="register.html"><i class="fas fa-user-plus" style="margin-right: 5px;"></i> Register</a>
+            </li>
+            <li>
+                <a href="{% url 'cart_view' %}"><i class="fa-solid fa-utensils" style="margin-right: 5px;"></i> Food cart</a>
+            </li>
+            <li>
+                <a href="revieww.html"><i class="fa-solid fa-star" style="margin-right: 5px;"></i> Review</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="row fade-in">
+        <div class="row1"></div>
+        <div class="row2">
+            <h1 class="gradient-text" style="font-family: 'Satisfy', cursive;">Welcome to Flavor Fusion—Where every meal is a chance to connect and recharge!</h1>
+        </div>
+    </div>
+
+    <div class="rowww fade-in">
+        <div class="roww">
+            <h1 style="font-family: 'Satisfy', cursive; color: white;">Say goodbye to long lines and hello to effortless ordering right from your workspace.</h1>
+        </div>
+    </div>
+
+    <div class="container fade-in">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+    <main>
+        <section class="menu">
+            <h2>Today's Special</h2>
+            <div class="menu-item">
+                <h3>Pasta Primavera</h3>
+                <p>A fresh mix of seasonal veggies and pasta, drizzled with olive oil.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Grilled Chicken Salad</h3>
+                <p>Juicy grilled chicken served over a bed of crisp greens.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Chocolate Mousse</h3>
+                <p>A rich and creamy dessert to satisfy your sweet tooth!</p>
+            </div>
+        </section>
+    </main>
+
+    <hr style="height: 3px; background-color: black; margin-left: 10%; margin: 15px auto; width: 80%;">
+
+   
+    <h1 style="text-align: center; margin-top: 4%; margin-bottom: 3%;font-family: 'Courgette', sans-serif;">Savor the Flavors: Explore Our Delicious Menu <i class="fa-solid fa-pepper-hot"></i></h1>
+    <form class="form-inline" style="margin-left: 41%; margin-top: -1%; margin-bottom: 2%;">
+        <input class="form-control" name="q" type="search" placeholder="Search here" style="border-radius: 5px;padding: 0.5%;">
+        <button class="btn" type="submit" style="padding: 0.5%;"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <div class="row {% if is_single_product %}single-product{% endif %}" style="margin-left: 10%; margin-bottom: 0px;">
+        {% for item in food %}
+            <div class="col" style="margin-right: 2px;">
+            <div class="card" style="width: 95%;">
+                <img src="{{ item.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4 class="card-title" style="padding-left: 10%;">{{item.name}}</h4>
+                  <p class="card-text">&#x20B9 {{ item.price }} </p>
+                  <form action="{% url 'add_to_cart' %}" method="POST" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{ item.id }}">
+                    <input type="submit" value="Add Item" class="button">
+                </form>
+            </div>
+            </div>
+            </div>
+            {% if forloop.counter|divisibleby:4 and not forloop.last %}
+            </div><div class="row" style="margin-left: 10%;margin-top: -20px;">
+            {% endif %}
+            
+        {% endfor %}
+        </div>
+        <br>
+        <!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none;">&#8679;</button>
+
+        
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2 style="color: #ff5722;">Flavor Fusion</h2>
+            <p style="font-size: 14px; margin-top: 5px;">Your go-to food ordering platform</p>
+        </div>
+        <div class="footer-links">
+            <a href="about.html">
+                <i class="fas fa-info-circle" style="margin-right: 8px;"></i> About Us
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope" style="margin-right: 8px;"></i> Contact Us
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Flavor Fusion. All Rights Reserved.</p>
+    </div>
+  
+</footer>
+
+    <script>
+        // Typing effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "Welcome to Flavor Fusion—Where every meal is a chance to connect and recharge!";
+            const element = document.querySelector(".gradient-text");
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    element.textContent += text[index];
+                    index++;
+                    setTimeout(typeEffect, 35); // Adjust typing speed here
+                }
+            }
+
+            element.textContent = ""; // Clear existing text
+            typeEffect();
+        });
+
+        // Fade-in effect on scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            function handleScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();  // Trigger the effect when the page first loads
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const rowwElement = document.querySelector('.roww'); // Select the roww class element
+    
+    // Function to trigger fade-in effect on scroll
+    function handleScroll() {
+        fadeElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('visible');
+            }
+        });
+        
+        // Trigger fade-in for .roww class
+        const rect = rowwElement.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            rowwElement.classList.add('visible');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();  // Trigger the effect when the page first loads
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll('.add-to-cart-form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const url = form.action;
+            const formData = new FormData(form);
+            const csrfToken = formData.get('csrfmiddlewaretoken');
+
+            fetch(url, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message); // Optional: Show a message to the user
+                    // Update cart count (if needed)
+                    const cartCount = document.querySelector('.cart-count'); 
+                    if (cartCount) {
+                        cartCount.textContent = data.cart_count;
+                    }
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+});
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const footer = document.querySelector("footer"); // Select footer element
+
+        // Show the button when scrolled down 300px
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+
+            // Adjust the position of the button to stay above the footer
+            const footerRect = footer.getBoundingClientRect();
+            if (footerRect.top <= window.innerHeight) {
+                // Adjust the bottom position if the footer is visible
+                scrollToTopBtn.style.bottom = `${footerRect.height + 20}px`;
+            } else {
+                // Reset to the default position if the footer is not in view
+                scrollToTopBtn.style.bottom = "20px";
+            }
+        });
+
+        // Scroll to the top when the button is clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    });
+
+
+</script>  
+</body>
+</html>

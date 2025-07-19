@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Flavor Fusion</title>
+    <link rel="stylesheet" href="\static\css\contact.css">
+</head>
+<body>
+    {% include 'mysite/foo.html' %}
+    <div class="main-div">
+    <div class="contact-container">
+        <p>We’d love to hear from you! Feel free to reach out:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@flavorfusion.com" style="color:  #e64a19;">support@flavorfusion.com</a></li>
+            <li><strong>Phone:</strong> +91-1234567890</li>
+            <li><strong>Address:</strong> Office 123, Business Hub, Tech City, India</li>
+        </ul>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <p id="response-message"></p>
+    </div>
+    <div class="second-container"></div>
+    </div>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Mock submission logic
+            if (name && email && message) {
+                document.getElementById('response-message').textContent = 
+                    'Thank you for contacting us! We’ll get back to you soon.';
+            } else {
+                document.getElementById('response-message').textContent = 
+                    'Please fill in all fields.';
+            }
+        });
+    </script>
+</body>
+</html>

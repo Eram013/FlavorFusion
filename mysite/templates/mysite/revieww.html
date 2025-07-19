@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="\static\css\rev.css">
+</head>
+<body>
+    {% include 'mysite/foo.html' %}
+    <div class="one-review">
+    <div class="rev-pic"></div>
+    <div class="rev-pic2">
+            <section class="form-section">
+                <h1>Leave a Review</h2>
+                <form action="/submit-review" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+                    <label for="review">Your Review:</label>
+                    <textarea id="review" name="review" placeholder="Write your review here" required></textarea>
+        `
+                    <button type="submit">Submit Review</button>
+                </form>
+            </section>
+    </div>
+    <section class="reviews-section">
+          <div class="reviews">
+            <div class="review" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 1px; ">
+              <div class="review-header">
+                <span class="review-author">Priya Sharma</span>
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p class="review-text">"The food is delicious and always fresh. Perfect for a busy workday!"</p>
+            </div>
+            <div class="review" style="margin-left:45%; margin-bottom: 1px; width: 100%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); ">
+              <div class="review-header">
+                <span class="review-author">Rahul Verma</span>
+                <span class="review-rating">⭐⭐⭐⭐</span>
+              </div>
+              <p class="review-text">"Loved the variety! Everything tastes like homemade comfort food."</p>
+            </div>
+            <div class="review" style=" margin-left: 15%;width: 100%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 1px;">
+              <div class="review-header">
+                <span class="review-author">Anjali Patel</span>
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p class="review-text">"Amazing flavors and great portion sizes. Highly recommend the biryani!"</p>
+            </div>
+            <div class="review" style="margin-left:45%;  margin-bottom: 1px; width: 100%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); ">
+              <div class="review-header">
+                <span class="review-author">Kunal Desai</span>
+                <span class="review-rating">⭐⭐⭐⭐</span>
+              </div>
+              <p class="review-text">"The parathas are soft, and the curries are perfectly spiced. Simply yummy!"</p>
+            </div>
+            <div class="review"  style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 1px;">
+              <div class="review-header">
+                <span class="review-author">Sneha Kapoor</span>
+                <span class="review-rating">⭐⭐⭐⭐</span>
+              </div>
+              <p class="review-text">"Delicious and affordable meals! The butter paneer is my favorite."</p>
+            </div>
+          </div>
+    </section>
+    </div>
+</body>
+</html>

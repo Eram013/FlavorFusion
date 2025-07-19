@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        nav {
+    justify-content: baseline;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+.brand {
+    color: white;
+    font-size: 28px;
+    font-family: 'Pacifico', cursive;
+}
+.nav-ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.nav-li {
+    margin-left: 10px;
+}
+.nav-a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.nav-a:hover {
+    background-color: #f0f0f0;  
+    color: black; 
+    border-radius: 8px;  
+}
+</style>
+</head>
+<body>
+    <nav>
+    <div class="brand">FLAVOR FUSION</div>
+    <ul class="nav-ul">
+        <li class="nav-li">
+            <a href="{% url 'home' %}" class="nav-a"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a>
+        </li>
+        <li class="nav-li">
+            <a href="login.html" class="nav-a"><i class="fas fa-user" style="margin-right: 5px;"></i> Login</a>
+        </li>
+        <li class="nav-li">
+            <a href="register.html" class="nav-a"><i class="fas fa-user-plus" style="margin-right: 5px;"></i> Register</a>
+        </li>
+        <li class="nav-li">
+            <a href="{% url 'cart_view' %}" class="nav-a"><i class="fa-solid fa-utensils" style="margin-right: 5px;"></i> Food cart</a>
+        </li>
+        <li class="nav-li">
+            <a href="revieww.html" class="nav-a"><i class="fa-solid fa-star" style="margin-right: 5px;"></i> Review</a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ item.name }}</title>
+</head>
+<body>
+    <div class="col" style="margin-right: 2px;">
+        <div class="card" style="width: 95%;">
+            <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+            <div class="card-body">
+                <h4 class="card-title">{{ item.name }}</h4>
+                <p class="card-text">&#x20B9 {{ item.price }} </p>
+                <form method="POST">
+                    {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Add-Item</a>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

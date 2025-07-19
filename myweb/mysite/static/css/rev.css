@@ -1,0 +1,129 @@
+body{
+    background-image: url(../image/review.jpg);
+}
+.rev-pic{
+    height: 450px;
+    width: 30%;
+    background:url(../image/review2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.one-review{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    margin-top: 2%;
+}
+.rev-pic2{
+        position: absolute;
+        height: 400px;
+        width: 30%;
+        top: 24px;
+        bottom: 20px;
+        left:250px;
+        background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+        color: white;
+        align-items: center;
+        font-size: 18px;
+}
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    color: white; 
+    text-align: center;
+    padding-top:-20%;
+}
+main {
+    padding: 0px 5px 5px 8px;
+}
+.form-section {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.form-section input{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-right:20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+.form-section textarea {
+height: 60px;
+width: 90%;
+padding: 10px;
+margin-bottom: 20px;
+margin-right:20px;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 0.8em;
+}
+.form-section button {
+    width: 40%;
+    padding: 10px;
+    margin-left: 25%;
+    font-weight: bold;
+    background: linear-gradient(135deg, rgb(94, 252, 232) 10%, rgb(115, 110, 254) 100%);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-section button:hover {
+    background-color: #feb47b;
+}
+.reviews {
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
+    border-radius: 8px;
+    margin: 10px auto;
+    margin-right: 0;
+    margin-left: 55%;
+    width: 70%;
+    max-width: 900px;
+  }
+  
+  .review {
+    
+    padding:0px 0;
+  }
+  
+  .review:last-child {
+    border-bottom: none;
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #34495e;
+  }
+  
+  .review-rating {
+    color: #f1c40f;
+    font-size: 1em;
+  }
+  
+  .review-text {
+    margin-top: 8px;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #34495e;
+  }
+  
+  

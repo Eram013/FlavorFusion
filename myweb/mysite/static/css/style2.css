@@ -1,0 +1,74 @@
+body {
+    background: url(../image/registerr.jpg);
+    background-size: cover; 
+    background-position: center;
+    height: 100vh;
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 350px;
+    width: 100%;
+   
+    background: transparent;
+   
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: linear-gradient(115deg, rgb(0, 0, 0) 5.8%, rgb(178, 14, 14) 112.6%);
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: linear-gradient(115deg, rgb(0, 0, 0) 5.8%, rgb(178, 14, 14) 112.6%);
+    margin-left: 30px;
+}
+input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: -5px;
+    margin-left: 30px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+input:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+button {
+    width: 30%;
+    padding: 10px;
+    margin-top: 3%;
+    margin-left: 32%;
+    background: linear-gradient(115deg, rgb(0, 0, 0) 5.8%, rgb(178, 14, 14) 112.6%);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #6a11cb;
+}
+.footer {
+    text-align: center;
+    margin-top: -5px;
+    color: solid black;
+    font-weight: bolder;
+  
+}
+.footer a {
+    color: brown;
+    text-decoration: none;
+}

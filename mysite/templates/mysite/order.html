@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('../static/image/2in1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+        #container {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: none; /* Initially hidden */  
+            text-align: center;
+        
+        }
+        
+        .icon {
+            color: #d32f2f; 
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: black;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.8rem;
+            color:black;
+            margin: 5px 0;
+        }
+        .order-id {
+            font-size: 1.5rem;
+            color: #d32f2f;
+            font-weight: bold;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        .button:hover {
+            background-color: #b71c1c; 
+            transform: translateY(-2px);
+        }
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.5s;
+            z-index: 0;
+            transform: translate(-50%, -50%) scale(0);
+        }
+        .button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .button span {
+            position: relative;
+            z-index: 1;
+        }
+        .spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+             /* Optional background color */
+        }
+
+        /* Spinner styles */
+        #spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3; /* Light gray border */
+            border-top: 5px solid #3498db; /* Blue color for the spinning part */
+            border-radius: 50%; /* Makes it circular */
+            animation: spin 1s linear infinite; /* Infinite spinning animation */
+        }
+
+        /* Keyframes for spinner rotation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spinner-container">
+        <div id="spinner"></div>
+    </div>
+    <div id="container">
+        <i class="fas fa-utensils icon"></i>
+        <h1>Order Placed Successfully!</h1>
+        <p>Thank you for your order!</p>
+        <p class="order-id">Your Order ID: <span id="order-id"></span></p>
+        <a href="{% url 'home' %}" class="button"><span>Back to Home</span></a>
+    </div>
+
+    <script>
+        setTimeout(() => {
+        const div = document.getElementById("spinner");
+        div.style.display = "none"; // Hide the div
+    }, 2000);
+        document.getElementById('order-id').innerText = Math.floor(Math.random() * 100) + 1;
+    // JavaScript to make the div appear after 5 seconds
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const imageDiv = document.getElementById("container");
+            imageDiv.style.display = "block"; // Make the div visible
+        }, 2000); // Delay of 5 seconds
+    });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

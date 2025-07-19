@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            background-image: url('../static/image/2in1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Container styling */
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Header */
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        /* Payment Options Styling */
+        .payment-option label {
+            display: inline-block;
+            font-size: 1.1em;
+            margin: 15px 0;
+            cursor: pointer;
+            color: #444;
+            transition: color 0.2s ease;
+        }
+        .payment-option input[type="radio"] {
+            display: none;
+        }
+        .payment-option label:hover {
+            color: #f12711;
+        }
+
+        /* Hidden class for toggling sections */
+        .hidden {
+            display: none;
+        }
+
+        /* Payment details sections */
+        .payment-details {
+            margin: 15px 0;
+            text-align: left;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        input[type="text"], input[type="number"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus {
+            border-color: #f12711;
+        }
+
+        /* Button Styling */
+        button {
+            width: 30%;
+            padding: 12px;
+            background-color: #218838;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+       
+
+        /* QR Code and COD Message Styling */
+        #scan-pay img {
+            width: 180px;
+            margin: 15px auto;
+        }
+        #cod-message p {
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+
+
+<script>
+    function showPaymentDetails(option) {
+        document.getElementById("card-details").style.display = option === "card" ? "block" : "none";
+        document.getElementById("scan-pay").style.display = option === "scan_pay" ? "block" : "none";
+        document.getElementById("cod-message").style.display = option === "cod" ? "block" : "none";
+    }
+
+    function validateForm(event) {
+        const paymentMethod = document.querySelector('input[name="payment_method"]:checked');
+        if (!paymentMethod) {
+            alert("Please select a payment method.");
+            event.preventDefault();
+            return false;
+        }
+
+        if (paymentMethod.value === "card") {
+            const cardNumber = document.getElementById("card_number").value.trim();
+            const expiryDate = document.querySelector('input[name="expiry_date"]').value.trim();
+            const cvv = document.querySelector('input[name="cvv"]').value.trim();
+            
+            if (!cardNumber || !expiryDate || !cvv) {
+                alert("Please fill in all the card details.");
+                event.preventDefault();
+                return false;
+            }
+        }
+
+        if (paymentMethod.value === "scan_pay") {
+            // Additional validation for Scan & Pay can be added if necessary
+            alert("Please ensure you have scanned the QR code.");
+            // Optionally block submission here if QR scan confirmation logic exists
+        }
+    }
+</script>
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>Choose Your Payment Method</h2>
+        <form method="POST" action="{% url 'order' %}" onsubmit="validateForm(event)">
+            {% csrf_token %}
+            <div class="payment-options">
+                <label>
+                    <input type="radio" style="opacity: 0;" name="payment_method" value="card" onclick="showPaymentDetails('card')" required>
+                    💳 Card Payment
+                </label>
+                <label>
+                    <input type="radio" style="opacity: 0;" name="payment_method" value="scan_pay" onclick="showPaymentDetails('scan_pay')" required>
+                    📲 Scan & Pay
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio"  style="opacity: 0;" name="payment_method" value="cod" onclick="showPaymentDetails('cod')" required>
+                    💵 Cash on Delivery (COD)
+                </label>
+            </div>
+
+            <!-- Card Payment Details -->
+            <div id="card-details" class="payment-details hidden">
+                <h3 style="text-align: center;">Enter Card Details</h3>
+                <label for="card_number">Card Number</label>
+                <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456">
+                
+                <label>Expiry Date</label>
+                <input type="text" name="expiry_date" placeholder="MM/YY">
+                
+                <label>CVV</label>
+                <input type="password" name="cvv" placeholder="•••">
+            </div>
+
+            <!-- QR Code Payment Details -->
+            <div id="scan-pay" style="display: none;">
+                <p>Scan this QR code to pay</p>
+                <img src="https://via.placeholder.com/180" alt="QR Code">
+            </div>
+            
+
+            <!-- Cash on Delivery Message -->
+            <div id="cod-message" style="display: none;">
+                <h3>Cash on Delivery</h3>
+                <p>You will pay for your order when it is delivered to you.</p>
+            </div>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

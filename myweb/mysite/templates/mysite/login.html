@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="\static\css\style.css"> 
+</head>
+<body>
+    <div class="box">
+    <div class="login-div" style=" text-align: center;">
+        <div class="wel">
+        <h1 style="color: white; margin-bottom: 20px; margin-left: 10%;"> Welcome Back!</h1>
+        </div>
+        <form method="POST">
+        {% csrf_token %}
+          <div style="margin-bottom: 15px;">
+                    {{ form.username }}  
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    {{ form.password }}  
+                </div>
+
+                <button type="submit" style="width: 45%; padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;margin-left: 15%;">Login</button>
+                
+                <p style="margin-top: 15px; color: white;">Don’t have an account? <a href="register.html" style="color: #007BFF; text-decoration: none;">Register</a></p>
+            </form>
+        </div>
+    </div>
+       
+<body>
+</html>
+    

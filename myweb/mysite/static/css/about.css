@@ -1,0 +1,38 @@
+
+body {
+    font-family: cursive;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    height: 300px;
+    max-width: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7) url(../image/buffet.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.about-container {
+    max-width: 100%;
+    background-color: white;
+    margin: 5% 20% 0% 20%;
+    border: 5px solid black;
+    padding: 20px;
+    color: black;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+strong {
+    color: #e64a19;
+}
