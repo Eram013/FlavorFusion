@@ -1,0 +1,22 @@
+body {
+    background: url(../image/darken.jpeg);
+    background-size: cover; 
+    background-position: center;
+    height: 100vh;
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-div{
+    background-color:transparent;
+    width: 100%;
+}
+
+.wel{
+    width: 150%;
+    margin-left:-25%;
+}
